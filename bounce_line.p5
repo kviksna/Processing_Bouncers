@@ -1,0 +1,27 @@
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background(100);
+	posx = 3;
+	posy = 4;
+	stepx = 1;
+	stepy = 3;
+	posx2 = 30;
+	posy2 = 40;
+	stepx2 = 3;
+	stepy2 = 1;
+	c = 0;
+}
+
+function draw() {
+	posx += stepx;
+	posy += stepy;
+	posx2 += stepx2;
+	posy2 += stepy2;
+	if(posx > windowWidth || posx < 0) stepx *= -1;
+	if(posy > windowHeight || posy < 0) stepy *= -1;
+	if(posx2 > windowWidth || posx2 < 0) stepx2 *= -1;
+	if(posy2 > windowHeight || posy2 < 0) stepy2 *= -1;
+	line(posx, posy, posx2, posy2);
+	c++;
+	print(c);
+}

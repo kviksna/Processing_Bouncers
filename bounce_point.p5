@@ -1,0 +1,20 @@
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background(100);
+	posx = 3;
+	posy = 4;
+	stepx = 1;
+	stepy = 3;
+	c = 0;
+}
+
+function draw() {
+	posx += stepx;
+	posy += stepy;
+	if(posx > windowWidth || posx < 0) stepx *= -1;
+	if(posy > windowHeight || posy < 0) stepy *= -1;
+	//ellipse(posx, posy, 2, 2);
+	point(posx, posy);
+	c++;
+	print(c);
+}
